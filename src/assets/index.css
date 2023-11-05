@@ -5,3 +5,16 @@
 .max-w-xxs {
   max-width: 10rem;
 }
+
+.min-h-subnav {
+  min-height: calc(100vh - 3rem);
+}
+
+.width-stuff {
+  max-width: 28rem;
+  width: 100%;
+}
+
+.grid-cols-repeat-auto-20-full {
+  grid-template-columns: repeat(auto-fill, min(20rem, 100%));
+}

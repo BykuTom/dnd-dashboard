@@ -1,18 +1,20 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+import { classNames } from "../../utils/appUtils";
+import { useAuth } from "../../../context/AuthContext";
 
-interface ProfileMenuProps {
-  classNames: (...classes: Array<string>) => string;
-  handleLogin: (value: boolean) => void;
-}
-export const ProfileMenu: React.FC<ProfileMenuProps> = ({
-  classNames,
-  handleLogin,
-}) => {
+export const ProfileMenu = () => {
+  const { dispatch } = useAuth();
+
+  const handleLogout = () => {
+    console.log("here");
+    dispatch({ type: "LOGOUT" });
+  };
+
   return (
     <Menu as="div" className="relative ml-3">
       <div>
-        <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+        <Menu.Button className="relative flex rounded-full bg-stone-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-stone-800">
           <span className="absolute -inset-1.5" />
           <span className="sr-only">Open user menu</span>
           <img
@@ -31,13 +33,13 @@ export const ProfileMenu: React.FC<ProfileMenuProps> = ({
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-gray-600  shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-stone-600  shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <Menu.Item>
             {({ active }) => (
               <a
                 href="#"
                 className={classNames(
-                  active ? "bg-gray-800 text-gray-300" : "",
+                  active ? "bg-stone-800 text-stone-300" : "",
                   "block px-4 py-2 text-sm text-white"
                 )}
               >
@@ -50,7 +52,7 @@ export const ProfileMenu: React.FC<ProfileMenuProps> = ({
               <a
                 href="#"
                 className={classNames(
-                  active ? "bg-gray-800 text-gray-300" : "",
+                  active ? "bg-stone-800 text-stone-300" : "",
                   "block px-4 py-2 text-sm text-white"
                 )}
               >
@@ -62,11 +64,9 @@ export const ProfileMenu: React.FC<ProfileMenuProps> = ({
             {({ active }) => (
               <a
                 href="#"
-                onClick={() => {
-                  handleLogin(false);
-                }}
+                onClick={handleLogout}
                 className={classNames(
-                  active ? "bg-gray-800 text-gray-300" : "",
+                  active ? "bg-stone-800 text-stone-300" : "",
                   "block px-4 py-2 text-sm text-white"
                 )}
               >

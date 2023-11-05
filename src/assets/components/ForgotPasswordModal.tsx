@@ -55,7 +55,7 @@ export const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full flex flex-col items-center gap-1 max-w-md transform overflow-hidden rounded-md bg-gray-600 p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full flex flex-col items-center gap-1 max-w-md transform overflow-hidden rounded-md bg-stone-600 p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
                     className="text-lg font-medium leading-6 text-white"
@@ -63,7 +63,7 @@ export const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({
                     Lost Password
                   </Dialog.Title>
                   <div className="mt-2">
-                    <p className="text-sm text-gray-100">
+                    <p className="text-sm text-stone-100">
                       If you have forgotten your password, you can use this form
                       to reset your password. You will receive an email with
                       instructions.
@@ -74,7 +74,7 @@ export const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({
                     onSubmit={formik.handleSubmit}
                   >
                     <input
-                      className="border-solid rounded-sm bg-gray-700 text-white w-full p-1 px-2 "
+                      className="border-solid rounded-sm bg-stone-700 text-white w-full p-1 px-2 "
                       type="email"
                       placeholder="Email@email.mail"
                       name="email"

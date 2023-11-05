@@ -1,3 +1,3 @@
 export const CampaignTool = () => {
-  return <h1>Campaign Tool</h1>;
+  return <div> Campaign Tool</div>;
 };
